@@ -17,7 +17,7 @@
         <img class="profile__avatar" src="./images/avatar.jpg" alt="Фото пользователя">
         <div class="profile__information">
           <div class="profile__info">
-          <p class="profile__name">Жак-Ив Кусто</p>
+          <h1 class="profile__name">Жак-Ив Кусто</h1>
           <button class="profile__edit-button" type="button"></button>
           </div>
           <p class="profile__text">Фотограф</p>
@@ -27,7 +27,7 @@
       <section class="photocards" aria-label="Стена с фотокарточками">
         <ul class="cards">
           <li class="cards__item">
-            <img class="cards__image" src="./images/Watson Lake.jpg" alt="Озеро Уотсон">
+            <img class="cards__image" src="./images/Watson-Lake.jpg" alt="Озеро Уотсон">
             <div class="cards__label">
               <h2 class="cards__title">Озеро Уотсон</h2>
               <button class="cards__button" type="button"></button>
@@ -74,6 +74,18 @@
     <footer class="footer">
       <h2 class="footer__title">© 2020 Mesto Russia</h2>
     </footer>
+    <div class="popup">
+      <div class="popup__container">
+        <button class="popup__close-button" type="button"></button>
+        <h2 class="popup__title">Редактировать профиль</h2>
+        <form class="popup__content" action="#">
+          <input type="text" value="" class="popup__name" placeholder="Введите имя">
+          <input type="text" value="" class="popup__text" placeholder="Чем Вы занимаетесь?">
+          <input type="submit" class="popup__submit" value="Сохранить">
+        </form>
+      </div>
+    </div>
   </div>
+  <script src="./scripts/index.js"></script>
 </body>
 </html>
