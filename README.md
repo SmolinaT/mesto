@@ -8,4 +8,4 @@
 
 **GitHub**
 
-* [Ссылка на проект в GitHub](https://smolinat.github.io/russian-travel/)
+* [Ссылка на проект в GitHub](https://smolinat.github.io/mesto/)
