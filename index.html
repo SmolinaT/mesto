@@ -72,16 +72,16 @@
       </section>
     </main>
     <footer class="footer">
-      <h2 class="footer__title">© 2020 Mesto Russia</h2>
+      <p class="footer__title">© 2020 Mesto Russia</p>
     </footer>
     <div class="popup">
       <div class="popup__container">
         <button class="popup__close-button" type="button"></button>
         <h2 class="popup__title">Редактировать профиль</h2>
-        <form class="popup__content" action="#">
-          <input type="text" value="" class="popup__name" placeholder="Введите имя">
-          <input type="text" value="" class="popup__text" placeholder="Чем Вы занимаетесь?">
-          <input type="submit" class="popup__submit" value="Сохранить">
+        <form class="popup__content" action="#" name="editProfile">
+          <input type="text" class="popup__text popup__text_type_name" placeholder="Введите имя" name="editName">
+          <input type="text" class="popup__text popup__text_type_job" placeholder="Чем Вы занимаетесь?" name="editJob">
+          <input type="submit" class="popup__submit" value="Сохранить" name="saveButton">
         </form>
       </div>
     </div>

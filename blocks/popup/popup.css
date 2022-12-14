@@ -7,12 +7,5 @@
   background-color: rgba(0, 0, 0, .6);
   display: none;
   justify-content: center;
-  align-items: flex-start;
-  padding-top: 195px;
-}
-
-@media screen and (max-width: 450px) {
-  .popup {
-    padding-top: 123px;
-  }
+  align-items: center;
 }
