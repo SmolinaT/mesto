@@ -29,3 +29,66 @@ function handleFormSubmit (evt) {
 editButton.addEventListener('click', popupOpen);
 closeButton.addEventListener('click', popupClose);
 formElement.addEventListener('submit', handleFormSubmit); 
+
+//добавление карточек
+const initialCards = [
+  {
+    name: 'Архыз',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
+  },
+  {
+    name: 'Челябинская область',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
+  },
+  {
+    name: 'Иваново',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
+  },
+  {
+    name: 'Камчатка',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
+  },
+  {
+    name: 'Холмогорский район',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
+  },
+  {
+    name: 'Байкал',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
+  }
+];
+
+const cardsContainer = document.querySelector('.cards');
+const cardTemplate = document
+	.querySelector('.item-template')
+	.content
+	.querySelector('.cards__item');
+
+  function deleteCard(event) {
+    event.target.closest('.cards__item').remove();
+  }
+  
+  function cloneCard(event) {
+    const clonedCard = event.target.closest('.cards__item').cloneNode(true);
+    addCard(clonedCard);
+  }
+
+  function createCard ({name, link}) {
+    const card = cardTemplate.cloneNode(true);
+    const cardPhoto = card.querySelector('.cards__image');
+    cardPhoto.src = link;
+
+    const cardText = card.querySelector('.cards__title');
+    cardText.textContent = name;
+
+    return card;
+  }
+
+  function renderCards() {
+    initialCards.forEach(item => {
+      const cardHtml = createCard(item);
+      cardsContainer.append(cardHtml);
+    })
+  }
+
+  renderCards();
