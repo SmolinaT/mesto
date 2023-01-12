@@ -116,6 +116,7 @@ function createCard ({name, link}) {
   function openPhoto() {
     const popupImage = popupPhoto.querySelector('.popup__image');
     popupImage.src = link;
+    popupImage.alt = name;
     popupText = popupPhoto.querySelector('.popup__caption');
     popupText.textContent = name;
     popupOpen(popupPhoto);
