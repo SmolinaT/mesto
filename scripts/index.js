@@ -18,7 +18,6 @@ const buttonPhotoClose = popupPhoto.querySelector('.popup__close-button');
 const popupImage = popupPhoto.querySelector('.popup__image');
 const popupText = popupPhoto.querySelector('.popup__caption');
 
-
 //функция открытия попапа
 function popupOpen (popup) {
   popup.classList.add('popup_opened');
@@ -28,6 +27,25 @@ function popupOpen (popup) {
 function popupClose (popup) {
   popup.classList.remove('popup_opened');
 }
+
+//слушатель закрытия попапа на оверлей
+document.addEventListener('click', function(evt) {
+  if(evt.target.classList.contains('popup')) {
+    popupClose(evt.target);
+  }
+})
+
+//функция закрытия попапа на esc
+function keyHandler (evt) {
+  if (evt.key === 'Escape') {
+    popupClose(popupProfile);
+    popupClose(popupCard);
+    popupClose(popupPhoto);
+  }
+ }
+
+//слушатель закрытия попапа на esc
+ document.addEventListener('keydown', keyHandler);
 
 //функция отправки формы профиля
 function handleFormProfileSubmit (evt) {
@@ -46,6 +64,7 @@ buttonEdit.addEventListener('click', function() {
   nameInput.value = profileName.textContent;
   jobInput.value = profileJob.textContent;
   popupOpen(popupProfile);
+  cleanErrors(formElementProfile, configValid);
 });
 
 buttonProfileClose.addEventListener('click', function() {
@@ -127,6 +146,8 @@ function handleAddCardsSubmit (evt) {
 formElementCard.addEventListener('submit', handleAddCardsSubmit);
 
 buttonAdd.addEventListener('click', function() {
+  formElementCard.reset();
+  cleanErrors(formElementCard, configValid);
   popupOpen(popupCard);
 });
 
