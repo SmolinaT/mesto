@@ -140,12 +140,12 @@ function addCard(card) {
 //функция отправки формы карточек
 function handleAddCardsSubmit (evt) {
   evt.preventDefault();
-
-	const newCard = createCard({
+  
+  const newCard = createCard({
     name: titleInput.value, 
     link: linkInput.value});
-
-	addCard(newCard);
+    
+  addCard(newCard);
   closePopup (popupCard);
 }
 
