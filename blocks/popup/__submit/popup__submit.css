@@ -11,9 +11,16 @@
   text-align: center;
   color: #FFFFFF;
   padding: 0;
-  margin-top: 31px;
+  margin-top: 21px;
   opacity: 1;
   transition: opacity 1s linear 0.2s;
+}
+
+.popup__submit:disabled {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background: #FFFFFF;
+  color: #000000;
+  cursor: auto;
 }
 
 .popup__submit:hover {
