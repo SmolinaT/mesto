@@ -53,9 +53,9 @@ export default class FormValidator {
     })
   }
 
-  _cleanErrors() {
-    this._inputList.forEach(function (input) {
-      this._resetError();
+  cleanErrors() {
+    this._inputList.forEach((input) => {
+      this._resetError(input);
     })
     this._toggleButtonState();
   }
