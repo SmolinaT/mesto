@@ -15,7 +15,7 @@ const formElementCardValidator = new FormValidator(configValid, formElementCard)
 function openPopup (popup) {
   popup.classList.add('popup_opened');
   //слушатель закрытия попапа на оверлей
-  document.addEventListener('click', closePopupOnOverlay);
+  document.addEventListener('mousedown', closePopupOnOverlay);
   //слушатель закрытия попапа на esc
   document.addEventListener('keydown', closePopupOnEsc);
 }
