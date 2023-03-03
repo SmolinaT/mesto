@@ -1,9 +1,9 @@
 export default class Card {
-  constructor(item, templateSelector, openPhoto) {
+  constructor(item, templateSelector, {handleCardClick}) {
     this._name = item.name;
     this._link = item.link;
     this._templateSelector = templateSelector;
-    this._openPhoto = openPhoto;
+    this._handleCardClick = handleCardClick;
   }
 
   _getTemplate() {
@@ -18,7 +18,7 @@ export default class Card {
       this._likeCard();
     });
     this._cardPhoto.addEventListener('click', () => {
-      this._openPhoto(this._name, this._link);
+      this._handleCardClick(this._name, this._link);
     });
   }
 

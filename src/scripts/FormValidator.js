@@ -23,13 +23,13 @@ export default class FormValidator {
   
   _resetError(input) {
     input.classList.remove(this._inputErrorClass);
-    const error = this._form.querySelector(`#${input.name}-error`);
+    const error = this._form.querySelector(`#${input.id}-error`);
     error.classList.remove(this._errorClass);
   }
 
   _activateError(input) {
     input.classList.add(this._inputErrorClass);
-    const error = this._form.querySelector(`#${input.name}-error`);
+    const error = this._form.querySelector(`#${input.id}-error`);
     error.textContent = input.validationMessage;
     error.classList.add(this._errorClass);
   }
