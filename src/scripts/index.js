@@ -1,18 +1,18 @@
 import '../pages/index.css'
-import Card from './Card.js';
-import initialCards from './cards.js';
+import Card from './components/Card.js';
+import initialCards from './utils/cards.js';
 import {
   buttonEdit, buttonAdd, aboutPopup, nameInput, jobInput, profileName,
   profileJob, formElementProfile, popupProfile, buttonProfileClose, popupCard,
   buttonCardClose, formElementCard, titleInput, linkInput, popupPhoto, buttonPhotoClose,
   popupImage, popupText, cardsContainer, configValid
-} from './constants.js';
-import FormValidator from './FormValidator.js';
-import Popup from './Popup.js'
-import PopupWithImage from './PopupWithImage.js';
-import PopupWithForm from './PopupWithForm.js';
-import UserInfo from './UserInfo.js';
-import Section from './Section.js';
+} from './utils/constants.js';
+import FormValidator from './components/FormValidator.js';
+import Popup from './components/Popup.js'
+import PopupWithImage from './components/PopupWithImage.js';
+import PopupWithForm from './components/PopupWithForm.js';
+import UserInfo from './components/UserInfo.js';
+import Section from './components/Section.js';
 
 const formElementProfileValidator = new FormValidator(configValid, formElementProfile);
 formElementProfileValidator.enableValidation();
@@ -74,83 +74,3 @@ buttonAdd.addEventListener('click', () => {
   formElementCard.reset();
   formElementCardValidator.cleanErrors();
 });
-
-//buttonCardClose.addEventListener('click', function() {
-  //closePopup(popupCard);
-//});
-
-//слушатель попапа фото
-//buttonPhotoClose.addEventListener('click', function() {
-  //closePopup(popupPhoto);
-//})
-
-//функция отправки формы профиля
-//function handleFormProfileSubmit (evt) {
-  //evt.preventDefault();
-  //const name = nameInput.value;
-  //const job = jobInput.value;
-  //profileName.textContent = name;
-  //profileJob.textContent = job;
-  //closePopup (popupProfile);
-//}
-
-//слушатели попапа профиля
-//formElementProfile.addEventListener('submit', handleFormProfileSubmit);
-
-
-//функция попапа фото
-//function openPhoto(name, link) {
-  //popupImage.src = link; 
-  //popupImage.alt = name; 
-  //popupText.textContent = name; 
-  //openPopup(popupPhoto); 
-//}
-
-//функция создания карточки
-//function createCard (item) {
-  //const card = new Card(item, '.item-template', openPhoto);
-  //return card.createCard();
-//}
-
-//function renderCards() {
-  //initialCards.reverse().forEach(item => {
-    //const cardHtml = createCard(item);
-    //addCard(cardHtml);
-  //})
-//}
-
-//function renderCards() {
-  //initialCards.reverse().forEach(item => {
-    //const cardHtml = createCard(item);
-    //addCard(cardHtml);
-  //})
-//}
-
-//функция добавления карточки
-//function addCard(card) {
-  //cardsContainer.prepend(card);
-//}
-
-//функция отправки формы карточек
-//function handleAddCardsSubmit (evt) {
-  //evt.preventDefault();
-  
-  //const newCard = createCard({
-  //  name: titleInput.value, 
-    //link: linkInput.value});
-    
-  //addCard(newCard);
-  //closePopup (popupCard);
-//}
-
-//слушатели попапа карточек
-//formElementCard.addEventListener('submit', handleAddCardsSubmit);
-
-
-
-
-
-
-
-//renderCards();
-
