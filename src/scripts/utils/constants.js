@@ -1,16 +1,19 @@
 const buttonEdit = document.querySelector('.profile__edit-button');
 const buttonAdd = document.querySelector('.profile__add-button');
+const buttonEditAvatar = document.querySelector('.profile__overlay');
 const aboutPopup = document.querySelector('.popup');
 const nameInput = document.querySelector('.popup__text_type_name');
 const jobInput = document.querySelector('.popup__text_type_job');
 const profileName = document.querySelector('.profile__name');
 const profileJob = document.querySelector('.profile__text');
+const profileAvatar =  document.querySelector('.profile__avatar');
 const formElementProfile = document.querySelector('.popup__content_name_profile');
 const popupProfile = document.querySelector('.popup_name_profile');
 const buttonProfileClose = popupProfile.querySelector('.popup__close-button');
 const popupCard = document.querySelector('.popup_name_cards');
 const buttonCardClose = popupCard.querySelector('.popup__close-button');
 const formElementCard = document.querySelector('.popup__content_name_cards');
+const formElementAvatar = document.querySelector('.popup__content_name_avatar');
 const titleInput = document.querySelector('.popup__text_type_title');
 const linkInput = document.querySelector('.popup__text_type_link');
 const popupPhoto = document.querySelector('.popup_name_photo');
@@ -27,8 +30,8 @@ const configValid = {
 };
 
 export { 
-  buttonEdit, buttonAdd, aboutPopup, nameInput, jobInput, profileName,profileJob,
+  buttonEdit, buttonAdd, buttonEditAvatar, aboutPopup, nameInput, jobInput, profileName,profileJob, profileAvatar,
   formElementProfile, popupProfile, buttonProfileClose, popupCard, buttonCardClose,
-  formElementCard, titleInput, linkInput, popupPhoto, buttonPhotoClose, popupImage,
+  formElementCard, formElementAvatar, titleInput, linkInput, popupPhoto, buttonPhotoClose, popupImage,
   popupText, cardsContainer, configValid
 }
