@@ -74,8 +74,7 @@ editProfilePopup.setEventListeners();
 //Кнопка открытия попапа профиля
 buttonEdit.addEventListener('click', () => {
   const userData = userInfo.getUserInfo();
-  nameInput.value = userData.name;
-  jobInput.value = userData.about;
+  editProfilePopup.setInputValues(userData);
   editProfilePopup.open();
   formElementProfileValidator.cleanErrors();
 });
