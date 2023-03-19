@@ -9,7 +9,7 @@ export default class PopupWithForm extends Popup {
     this._buttonSave = this._form.querySelector('.popup__submit');
   }
 
-  formUX(isLoading) {
+  renderLoading(isLoading) {
     if(isLoading) {
       this._buttonSave.textContent = 'Сохранение...';
     } else {

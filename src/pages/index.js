@@ -54,7 +54,7 @@ popupWithImage.setEventListeners();
 //Попап с данными профиля
 const editProfilePopup = new PopupWithForm( { popupSelector: '.popup_name_profile',
   handleFormSubmit: (data) => {
-    editProfilePopup.formUX(true);
+    editProfilePopup.renderLoading(true);
 
     api.editUserData(data)
     .then((data) => {
@@ -65,7 +65,7 @@ const editProfilePopup = new PopupWithForm( { popupSelector: '.popup_name_profil
       console.log(err);
     })
     .finally(() => {
-      editProfilePopup.formUX(false);
+      editProfilePopup.renderLoading(false);
     })
   }
 });
@@ -88,7 +88,7 @@ const createCard = (item) => {
     },
     handleCardDelete: () => {
       popupDeleteCard.setSubmit(() => {
-        popupDeleteCard.formUX(true);
+        popupDeleteCard.renderLoading(true);
 
         api.deleteCard(card.getId()._id)
         .then(() => {
@@ -99,7 +99,7 @@ const createCard = (item) => {
           console.log(err);
         })
         .finally(() => {
-          popupDeleteCard.formUX(false);
+          popupDeleteCard.renderLoading(false);
         })
       });
       popupDeleteCard.open();
@@ -137,7 +137,7 @@ const cardList = new Section({
 //Попап добавления карточки
 const editCardPopup = new PopupWithForm( { popupSelector: '.popup_name_cards', 
   handleFormSubmit: (item) => {
-    editCardPopup.formUX(true)
+    editCardPopup.renderLoading(true)
 
     api.addNewCard(item)
     .then((item) => {
@@ -149,7 +149,7 @@ const editCardPopup = new PopupWithForm( { popupSelector: '.popup_name_cards',
       console.log(err);
     })
     .finally(() => {
-      editCardPopup.formUX(false);
+      editCardPopup.renderLoading(false);
     })
   }
 });
@@ -158,7 +158,6 @@ editCardPopup.setEventListeners();
 //Кнопка открытия попапа создания карточек
 buttonAdd.addEventListener('click', () => {
   editCardPopup.open();
-  formElementCard.reset();
   formElementCardValidator.cleanErrors();
 });
 
@@ -166,7 +165,7 @@ buttonAdd.addEventListener('click', () => {
 const editAvatarPopup = new PopupWithForm( { popupSelector: '.popup_name_avatar',
   handleFormSubmit: (data) => {
     console.log(data);
-    editAvatarPopup.formUX(true);
+    editAvatarPopup.renderLoading(true);
 
     api.editAvatar(data)
     .then((data) => {
@@ -177,7 +176,7 @@ const editAvatarPopup = new PopupWithForm( { popupSelector: '.popup_name_avatar'
       console.log(err);
     })
     .finally(() => {
-      editAvatarPopup.formUX(false);
+      editAvatarPopup.renderLoading(false);
     })
   }
 });

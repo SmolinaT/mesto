@@ -6,7 +6,7 @@ export default class PopupWithConfirmation extends Popup {
     this._buttonSave = this._popupElement.querySelector('.popup__submit');
   }
 
-  formUX(isLoading) {
+  renderLoading(isLoading) {
     if(isLoading) {
       this._buttonSave.textContent = 'Удаление...';
     } else {
