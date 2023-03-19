@@ -45,7 +45,7 @@ export default class Api {
       },
       body: JSON.stringify({
         name: data.name,
-        job: data.job
+        about: data.about
       })
     })
     .then(this._handleReturnPromise)
